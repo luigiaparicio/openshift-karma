@@ -6,7 +6,16 @@
     $ oc adm policy add-cluster-role-to-user -n openshift-karma -z default cluster-monitoring-view
     
     $ oc create secret generic karma --from-file=karma.yaml -n openshift-karma
-    
+  
+  ## Creating App
+  
+  +Add --> Conatiner Image
+  
+  - Image: lmierzwa/karma:latest
+  - Name: karma-alerts
+  - Route: Secured, Edge, Redirect
+  
+  
   ## Editing Deployment
       
       ...
