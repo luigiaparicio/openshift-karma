@@ -6,6 +6,8 @@ alertmanager:
       timeout: 10s
       proxy: true
       readonly: false
+      tls:
+        ca: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
       headers:
         Authorization: Bearer <INSERT-TOKEN>
 annotations:
@@ -18,9 +20,6 @@ custom:
   css: /custom.css
   js: /custom.js
 debug: false
-filters:
-  default:
-    - "@receiver=by-cluster-service"
 karma:
   name: karma-prod
 labels:
