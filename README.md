@@ -1,18 +1,18 @@
-# openshift-karma
+# karma
 
 
-    $ oc create namespace openshift-karma
+    $ oc create namespace karma
     
-    $ oc adm policy add-cluster-role-to-user -n openshift-karma -z default cluster-monitoring-view
+    $ oc adm policy add-cluster-role-to-user -n karma -z default cluster-monitoring-view
     
-    $ oc create secret generic karma --from-file=karma.yaml -n openshift-karma
+    $ oc create secret generic karma --from-file=karma.yaml -n karma
   
   ## Creating App
   
   +Add --> Conatiner Image
   
   - Image: lmierzwa/karma:latest
-  - Name: karma-alerts
+  - Name: karma
   - Route: Secured, Edge, Redirect
   
   
