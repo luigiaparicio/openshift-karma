@@ -3,7 +3,9 @@
 
     $ oc create namespace karma
     
-    $ oc adm policy add-cluster-role-to-user -n karma -z default cluster-monitoring-view
+    $ oc create sa karma -n karma
+    
+    $ oc adm policy add-cluster-role-to-user -n karma -z karma cluster-monitoring-view
     
     $ oc create secret generic karma --from-file=karma.yaml -n karma
   
